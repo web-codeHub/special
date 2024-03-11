@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* Prevent scrolling */
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            background-size: cover;
+        }
+
+        #video-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            backdrop-filter: blur(2px);
+            height: 13vh;
+            align-items: center;
+
+        }
+
+        li {
+            list-style: none;
+            font-style: Bold;
+            cursor: pointer;
+        }
+
+        #op {
+            transition: 1s;
+            opacity: 0%;
+            animation: show 8s infinite;
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay>
+        <source src="./alag.mp3" type="audio/mpeg">
+        <!-- Add additional source tags for different audio formats if necessary -->
+        Your browser does not support the audio tag.
+    </audio>
+
+    <video id="video-background" autoplay loop muted>
+        <source src="./earth.mp4" type="video/mp4">
+        <!-- Add additional source tags for different video formats if necessary -->
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="video-content">
+        <nav>
+            <li>Home</li>
+            <li>About</li>
+            <li>Join</li>
+            <li>Help</li>
+        </nav>
+
+        <h1 style="margin-top: 90px;"> There Are 7 billion People in in the world</h1>
+        <h2 id="op">But my heart choose you</h2>
+    </div>
+</body>
+
+</html>
